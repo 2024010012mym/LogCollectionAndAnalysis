@@ -16,24 +16,28 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 2
     steps:
-      - name: 确认 PR 事件
-        env:
-          PR_NUMBER: ${{ github.event.pull_request.number }}
-          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
-          HEAD_REPOSITORY: ${{ github.event.pull_request.head.repo.full_name }}
-          HEAD_BRANCH: ${{ github.event.pull_request.head.ref }}
-        run: |
-          mkdir -p pr-info
-          printf '%s\n' "$PR_NUMBER" > pr-info/pr_number.txt
-          printf '%s\n' "$HEAD_SHA" > pr-info/head_sha.txt
-          printf '%s\n' "$HEAD_REPOSITORY" > pr-info/head_repository.txt
-          printf '%s\n' "$HEAD_BRANCH" > pr-info/head_branch.txt
-          printf '收到 PR #%s，提交 %s\n' "$PR_NUMBER" "$HEAD_SHA"
+      - name: 写入可信 PR 元数据
+        uses: actions/github-script@f28e40c7f34bde8b3046d885e986cb6290c5673b # v7
+        with:
+          script: |
+            const fs = require("fs");
+            const pr = context.payload.pull_request;
+            fs.mkdirSync("pr-info", { recursive: true });
+            fs.writeFileSync(
+              "pr-info/event.json",
+              JSON.stringify({
+                repository: `${context.repo.owner}/${context.repo.repo}`,
+                number: pr.number,
+                title: pr.title,
+                head_sha: pr.head.sha,
+                event_at: pr.created_at
+              })
+            );
 
-      - name: 上传受限 PR 元数据
-        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5
+      - name: 上传可信 PR 元数据
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         with:
           name: pr-info
-          path: pr-info/
+          path: pr-info/event.json
           retention-days: 1
           if-no-files-found: error
