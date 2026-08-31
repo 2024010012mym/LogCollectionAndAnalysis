@@ -1,7 +1,10 @@
 name: PR 信息收集
+run-name: "PR 信息收集 #${{ github.event.pull_request.number }}"
 
 on:
-  pull_request:
+  # 安全边界：只读取事件元数据，禁止检出或执行学生 PR 中的任何内容。
+  # 使用受信任默认分支的工作流，使 fork PR 无需教师逐次批准。
+  pull_request_target:
     types: [opened, synchronize, reopened, edited]
 
 permissions:
