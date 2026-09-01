@@ -43,11 +43,12 @@ jobs:
           run-id: ${{ github.event.workflow_run.id }}
 
       - name: 使用共享审核器审核并处理 PR
-        uses: LiuXiYing/course-pr-reviewer@422e5a8aedcaee4a7e0459f4f7621cc24160ada6
+        uses: LiuXiYing/course-pr-reviewer@05bd07495d06eeb70b81a97a6ed4a60a743aed4d
         with:
           config-path: .github/course-review.yml
           students-path: .github/students.yml
           metadata-dir: pr-info
           github-token: ${{ secrets.GITHUB_TOKEN }}
           merge-token: ${{ secrets.PAT_TOKEN }}
+          glm-api-key: ${{ secrets.GLM_API_KEY }}
           gemini-api-key: ${{ secrets.GEMINI_API_KEY }}

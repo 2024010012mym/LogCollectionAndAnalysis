@@ -22,8 +22,12 @@ defaults:
   late_close_after_days: 7
 
 ai:
-  provider: gemini
-  model: gemini-3.5-flash-lite
+  providers:
+    - provider: glm
+      model: glm-4.7-flash
+    - provider: gemini
+      model: gemini-3.5-flash-lite
+  consensus_rounds: 3
   min_confidence: 0.8
   timeout_seconds: 60
   max_attempts: 5
@@ -38,8 +42,12 @@ ocr:
   max_text_chars: 20000
 
 vision:
-  provider: gemini
-  model: gemini-3.5-flash-lite
+  providers:
+    - provider: glm
+      model: glm-4.1v-thinking-flash
+    - provider: gemini
+      model: gemini-3.5-flash-lite
+  consensus_rounds: 3
   min_confidence: 0.85
   fail_confidence: 0.9
   timeout_seconds: 90
@@ -49,7 +57,7 @@ vision:
   max_total_bytes: 12000000
   max_pixels: 25000000
   max_side: 4096
-  max_output_tokens: 1000
+  max_output_tokens: 4096
 
 # 发布作业时在这里追加 Lab1、Lab2 等配置。
 # required_files 为精确文件名，不支持通配符；vision_files 支持 fnmatch 通配符。
