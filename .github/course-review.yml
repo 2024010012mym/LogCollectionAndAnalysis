@@ -63,7 +63,7 @@ vision:
 # required_files 为精确文件名，不支持通配符；vision_files 支持 fnmatch 通配符。
 assignments:
   Lab1:
-    deadline: "2026-09-03T23:59:59+08:00"
+    deadline: "2026-09-10T23:59:59+08:00"
     required_files:
       - Lab1.md
       - imgs/lab1-vmware-version.png
@@ -78,7 +78,6 @@ assignments:
       - imgs/lab1-resources.png
       - imgs/lab1-services.png
     review_points:
-      - 作业信息表格中的学号、姓名、班级和完成日期必须填写完整，不能留空或保留模板占位符。
       - 任务一：VMware 版本应为 VMware Workstation Pro 26H1 for Windows。
       - 任务二：Ubuntu 应为 24.04 LTS Desktop，处理器架构为 x86_64，安装介质版本为 Ubuntu 24.04.4 LTS。当前小版本高于 24.04.4 属于正常的系统更新结果，不算错误。
       - 任务三：虚拟机应有以 192.168、172 或 10 开头的私有 IP 和包含 default via 的默认路由；ping IP 和 ping 域名均成功；sudo apt update 使用国内镜像源（如 mirrors.tuna.tsinghua.edu.cn、mirrors.aliyun.com、mirrors.ustc.edu.cn）且没有 Err 或 Failed。若网络禁止 ping 但 apt update 成功，并在表格中说明情况，可判为合格。
