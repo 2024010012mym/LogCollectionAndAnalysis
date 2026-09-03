@@ -43,7 +43,7 @@ jobs:
           run-id: ${{ github.event.workflow_run.id }}
 
       - name: 使用共享审核器审核并处理 PR
-        uses: LiuXiYing/course-pr-reviewer@40d70aa5c9cb7be0f3a16cd4e50bfaf35bc8f9c0
+        uses: LiuXiYing/course-pr-reviewer@0c0b3d0d202c4ce8ef27ae34871a17b06a09e738
         with:
           config-path: .github/course-review.yml
           students-path: .github/students.yml
@@ -52,3 +52,6 @@ jobs:
           merge-token: ${{ secrets.PAT_TOKEN }}
           glm-api-key: ${{ secrets.GLM_API_KEY }}
           gemini-api-key: ${{ secrets.GEMINI_API_KEY }}
+          teacher-email: xiyingliunx@gmail.com
+          smtp-username: xiyingliunx@gmail.com
+          smtp-password: ${{ secrets.GMAIL_APP_PASSWORD }}
