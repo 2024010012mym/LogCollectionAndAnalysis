@@ -83,6 +83,6 @@ assignments:
       - 任务三：虚拟机应有以 192.168、172 或 10 开头的私有 IP 和包含 default via 的默认路由；ping IP 和 ping 域名均成功；sudo apt update 使用国内镜像源（如 mirrors.tuna.tsinghua.edu.cn、mirrors.aliyun.com、mirrors.ustc.edu.cn）且没有 Err 或 Failed。若网络禁止 ping 但 apt update 成功，并在表格中说明情况，可判为合格。
       - 任务四：虚拟 CPU 至少 2 核、内存至少 4GB、虚磁盘至少 40GB，且与所选配置档位一致。内存和根分区显示值略小于设置值属于正常现象，不算错误。
       - 任务五：open-vm-tools 为 active；ssh 和 rsyslog 均为 enabled 且 active；系统正在监听 TCP 22 端口；/var/log/syslog 中存在带本人学号姓名的 lab1-check 测试日志。
-      - 环境验收总结表的每一行都要给出结论，并简要说明遇到的问题和解决方法。
+      - 环境验收总结表的每一行只需给出明确结论；遇到的问题、解决方法及能否继续实验，应在表格后的说明段统一填写，不要求在每一行重复。只要前文任务表已填写且与总结一致，不得因总结表未重复 IP 地址、镜像站域名或配置档位而判为不合格。
     vision_review_points:
       - 截图必须是学生本人环境的电脑截图，终端截图需同时显示命令和输出，文字清晰可读。出现手机拍摄屏幕的反光、摩尔纹或明显倾斜时判为不合格。
