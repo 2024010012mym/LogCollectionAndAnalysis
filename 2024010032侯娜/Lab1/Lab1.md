@@ -260,35 +260,17 @@ sudo tail -n 10 /var/log/syslog
 
 | 验收项目 | 合格标准 | 你的结论 |
 | :--- | :--- | :--- |
-| VMware 版本 | VMware Workstation Pro 26H1 for Windows | |
-| Linux 版本 | Ubuntu 24.04 LTS Desktop amd64，安装介质为教师提供的 24.04.4 | |
-| 虚拟机联网 | 具有 IP 和默认路由，IP 联通与 DNS 解析正常 | |
-| 国内软件源 | 已换成国内镜像站，`sudo apt update` 成功 | |
-| CPU、内存、存储 | 至少 2 核、4GB、40GB，且与宿主机档位匹配 | |
-| VMware Tools、SSH、rsyslog | 软件包已安装，服务和功能检查通过 | |
+| VMware 版本 | VMware Workstation Pro 26H1 for Windows |VMware Workstation Pro 26H1 for Windows |
+| Linux 版本 | Ubuntu 24.04 LTS Desktop amd64，安装介质为教师提供的 24.04.4 |Ubuntu 24.04 LTS Desktop amd64，安装介质为教师提供的24.04.4 |
+| 虚拟机联网 | 具有 IP 和默认路由，IP 联通与 DNS 解析正常 |具有 IP 和默认路由，IP 联通与 DNS 解析正常 | 获取IP，外网访问、DNS解析正常 |
+| 国内软件源 | 已换成国内镜像站，`sudo apt update` 成功 |已换成国内镜像站，`sudo apt update` 成功 | 已更换国内镜像源，apt‑update执行成功 |
+| CPU、内存、存储 | 至少 2 核、4GB、40GB，且与宿主机档位匹配 |至少 2 核、4GB、40GB，且与宿主机档位匹配 | 配置2核CPU，4GB内存，40GB磁盘，配置达标 |
+| VMware Tools、SSH、rsyslog | 软件包已安装，服务和功能检查通过 |软件包已安装，服务和功能检查通过 | open‑vm‑tools、ssh、rsyslog全部安装，active、enabled，22端口监听，日志写入测试正常 |
 
 简要说明你遇到的问题、解决方法，以及当前环境是否可以继续完成后续实验：
 
 > 填写：
-
----
-
-## 截图要求
-
-- 截图须清晰，菜单和终端文字可读。
-- 终端截图应同时显示完整命令和其输出。
-- 一张截图可以包含同一任务下的多条命令及其输出，但每条命令和它的输出必须能对应上。
-- 截图中应能看到学生自己的虚拟机或学号姓名日志，不得直接使用他人截图。
-- 必须使用电脑自带的截图功能，严禁使用手机拍摄屏幕。
-- 所有截图放在 `imgs/` 目录中，文件名与下表一致。
-
-| 截图内容 | 文件名 |
-| :--- | :--- |
-| VMware Workstation About 页面，能看到完整版本 | `lab1-vmware-version.png` |
-| Ubuntu 当前版本、安装介质版本和 `x86_64` 架构 | `lab1-ubuntu-version.png` |
-| IP、默认路由、IP ping、域名 ping 和 `apt update` 成功 | `lab1-network.png` |
-| `nproc`、`free -h`、`lsblk`、`df -h /` 输出 | `lab1-resources.png` |
-| 三项组件版本/状态、22 端口和 rsyslog 测试日志 | `lab1-services.png` |
-
+问题1：openssh‑server安装完成但ssh.service缺失，重装openssh‑server修复；
+问题2：Ubuntu终端无法输入中文，日志测试使用学号+英文昵称代替中文姓名。
 ---
 
