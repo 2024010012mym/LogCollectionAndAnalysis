@@ -277,12 +277,12 @@ sudo tail -n 10 /var/log/syslog
 
 | 验收项目 | 合格标准 | 你的结论 |
 | :--- | :--- | :--- |
-| VMware 版本 | VMware Workstation Pro 26H1 for Windows | |
-| Linux 版本 | Ubuntu 24.04 LTS Desktop amd64，安装介质为教师提供的 24.04.4 | |
-| 虚拟机联网 | 具有 IP 和默认路由，IP 联通与 DNS 解析正常 | |
-| 国内软件源 | 已换成国内镜像站，`sudo apt update` 成功 | |
-| CPU、内存、存储 | 至少 2 核、4GB、40GB，且与宿主机档位匹配 | |
-| VMware Tools、SSH、rsyslog | 软件包已安装，服务和功能检查通过 | |
+| VMware 版本 | VMware Workstation Pro 26H1 for Windows |已满足 |
+| Linux 版本 | Ubuntu 24.04 LTS Desktop amd64，安装介质为教师提供的 24.04.4 |Ubuntu 24.04.4 LTS Desktop amd64	 |
+| 虚拟机联网 | 具有 IP 和默认路由，IP 联通与 DNS 解析正常 | 已获取IP192.168.125.128，可连通公网，网络正常	|
+| 国内软件源 | 已换成国内镜像站，`sudo apt update` 成功 |已配置清华镜像源，sudo apt update执行成功	 |
+| CPU、内存、存储 | 至少 2 核、4GB、40GB，且与宿主机档位匹配 |分配2核CPU，5.7GiB内存，40G磁盘，满足要求	 |
+| VMware Tools、SSH、rsyslog | 软件包已安装，服务和功能检查通过 |全部安装完成，服务active，功能验证通过	 |
 
 简要说明你遇到的问题、解决方法，以及当前环境是否可以继续完成后续实验：
 
