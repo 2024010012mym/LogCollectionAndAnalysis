@@ -35,8 +35,8 @@ VMware Workstation Pro 26H1 for Windows
 
 | 项目 | 你的填写内容 |
 | :--- | :--- |
-| 已安装的 VMware 完整版本号 | |
-| 是否为教师指定版本 | |
+| 已安装的 VMware 完整版本号 | 26.0.025388381|
+| 是否为教师指定版本 | 是|
 
 ![VMware 版本](imgs/lab1-vmware-version.png)
 
@@ -133,7 +133,7 @@ sudo apt update
 | 网络模式 | NAT / 其他：192.168.250.2 |
 | ping `223.5.5.5` 是否成功 |成功 |
 | ping `mirrors.tuna.tsinghua.edu.cn` 是否成功 | 成功|
-| 使用的软件源镜像站 | 是|
+| 使用的软件源镜像站 | 清华镜像mirrors.tuna.tsinghua.edu.cn|
 | `sudo apt update` 是否成功 | 成功|
 | 联网是否合格 | 合格|
 
@@ -179,8 +179,8 @@ df -h /
 
 | 项目 | 你的填写内容 |
 | :--- | :--- |
-| 宿主机内存 / CPU 核心 / 存放盘剩余空间 | |
-| 选择的配置档位 | 最低可用档 / 课程推荐档 / 宽裕档 |
+| 宿主机内存 / CPU 核心 / 存放盘剩余空间 |宿主机内存：16108MB，CPU内核：8核，存放盘剩余空间：665GB |
+| 选择的配置档位 |  课程推荐档 |
 | 虚拟 CPU 核心数 |2 |
 | 虚拟内存 | 5.7Gi|
 | 虚磁盘容量 |40Gi |
@@ -278,13 +278,13 @@ sudo tail -n 10 /var/log/syslog
 
 | 验收项目 | 合格标准 | 你的结论 |
 | :--- | :--- | :--- |
-| VMware 版本 | VMware Workstation Pro 26H1 for Windows | |
-| Linux 版本 | Ubuntu 24.04 LTS Desktop amd64，安装介质为教师提供的 24.04.4 | |
-| 虚拟机联网 | 具有 IP 和默认路由，IP 联通与 DNS 解析正常 | |
-| 国内软件源 | 已换成国内镜像站，`sudo apt update` 成功 | |
-| CPU、内存、存储 | 至少 2 核、4GB、40GB，且与宿主机档位匹配 | |
-| VMware Tools、SSH、rsyslog | 软件包已安装，服务和功能检查通过 | |
+| VMware 版本 | VMware Workstation Pro 26H1 for Windows | 合格，版本号 26.0.0.25388281，为教师指定版本|
+| Linux 版本 | Ubuntu 24.04 LTS Desktop amd64，安装介质为教师提供的 24.04.4 |合格，使用教师提供 Ubuntu24.04.4 镜像完成安装 |
+| 虚拟机联网 | 具有 IP 和默认路由，IP 联通与 DNS 解析正常 | 合格，虚拟机获取 IP，网络连通、DNS 解析正常|
+| 国内软件源 | 已换成国内镜像站，`sudo apt update` 成功 | 合格，已更换国内镜像源，apt update 执行成功|
+| CPU、内存、存储 | 至少 2 核、4GB、40GB，且与宿主机档位匹配 |合格，虚拟 CPU2 核，内存 5.7Gi，磁盘 40Gi，匹配课程推荐档 |
+| VMware Tools、SSH、rsyslog | 软件包已安装，服务和功能检查通过 |合格，三项服务全部安装，功能验证全部通过 |
 
-简要说明你遇到的问题、解决方法，以及当前环境是否可以继续完成后续实验：
+简要说明你遇到的问题、解决方法，以及当前环境是否可以继续完成后续实验：安装系统初期使用简易安装模式出现卡死，关闭 Easy‑Install，采用手动分步安装完成 Ubuntu 部署；SSH 服务初始未设置开机自启，执行`systemctl enable ssh`开启开机启动，22 端口正常监听；rsyslog 使用 logger 命令生成带学号姓名的测试日志，在`/var/log/syslog`中成功捕获记录。全部问题处理完毕，当前环境满足实验要求，可以开展后续实验。
 
 >
