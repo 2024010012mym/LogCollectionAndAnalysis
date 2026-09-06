@@ -24,8 +24,8 @@ VMware Workstation Pro 26H1 for Windows
 
 | 项目 | 你的填写内容 |
 | :--- | :--- |
-| 已安装的 VMware 完整版本号 | |
-| 是否为教师指定版本 | |
+| 已安装的 VMware 完整版本号 | VMware® Workstation Pro 26H1  26.0.0.25388281|
+| 是否为教师指定版本 |是 |
 
 ![VMware 版本](imgs/lab1-vmware-version.png)
 
@@ -61,10 +61,10 @@ sudo cat /var/log/installer/media-info
 
 | 项目 | 你的填写内容 |
 | :--- | :--- |
-| Ubuntu 当前完整版本 | |
-| 安装介质的版本 | |
-| 处理器架构 | |
-| 是否为教师提供的 Ubuntu 24.04.4 LTS Desktop amd64 | |
+| Ubuntu 当前完整版本 |ubuntu 24.04.4 LTS|
+| 安装介质的版本 |Ubuntu 24.04.4 LTS "Noble Nmubat" -Release amd64 (20260210) |
+| 处理器架构 |x86_64 |
+| 是否为教师提供的 Ubuntu 24.04.4 LTS Desktop amd64 |是 |
 
 ![Ubuntu 版本](imgs/lab1-ubuntu-version.png)
 
@@ -118,13 +118,13 @@ sudo apt update
 
 | 项目 | 你的填写内容 |
 | :--- | :--- |
-| 虚拟机 IP 地址 | |
-| 网络模式 | NAT / 其他： |
-| ping `223.5.5.5` 是否成功 | |
-| ping `mirrors.tuna.tsinghua.edu.cn` 是否成功 | |
-| 使用的软件源镜像站 | |
-| `sudo apt update` 是否成功 | |
-| 联网是否合格 | |
+| 虚拟机 IP 地址 | 192.168.225.128|
+| 网络模式 | NAT / 其他：NAT |
+| ping `223.5.5.5` 是否成功 | 是|
+| ping `mirrors.tuna.tsinghua.edu.cn` 是否成功 |是 |
+| 使用的软件源镜像站 | 清华大学镜像站mirror.tuna.tsinghuaedu,cn|
+| `sudo apt update` 是否成功 |是 |
+| 联网是否合格 | 合格|
 
 ![虚拟机联网](imgs/lab1-network.png)
 
@@ -168,13 +168,13 @@ df -h /
 
 | 项目 | 你的填写内容 |
 | :--- | :--- |
-| 宿主机内存 / CPU 核心 / 存放盘剩余空间 | |
+| 宿主机内存 / CPU 核心 / 存放盘剩余空间 |CPU核心数：2核；宿主总内存：5.7Gi；可用内存：4.4Gi;存放盘剩余空间：26G |
 | 选择的配置档位 | 最低可用档 / 课程推荐档 / 宽裕档 |
-| 虚拟 CPU 核心数 | |
-| 虚拟内存 | |
-| 虚磁盘容量 | |
-| 根分区可用空间 | |
-| 资源分配是否符合对应档位 | |
+| 虚拟 CPU 核心数 |2 |
+| 虚拟内存 | 总容量5.7Gi,可用4.4Gi|
+| 虚磁盘容量 | 40G|
+| 根分区可用空间 | 26G|
+| 资源分配是否符合对应档位 | 符合，当前2核CPU，5.7Gi内存，40G磁盘的配置，满足课程推荐档的资源要求，根区分可用空间充裕|
 
 ![虚机资源](imgs/lab1-resources.png)
 
@@ -250,14 +250,14 @@ sudo tail -n 10 /var/log/syslog
 
 | 项目 | 你的填写内容 |
 | :--- | :--- |
-| VMware Tools 版本 | |
-| `open-vm-tools` 是否 active | |
-| 桌面分辨率是否能自动调整 | |
-| SSH 是否 enabled / active | |
-| 22 端口是否监听 | |
-| rsyslog 是否 enabled / active | |
-| `/var/log/syslog` 是否出现带学号姓名的测试日志 | |
-| 三项组件是否全部验收合格 | |
+| VMware Tools 版本 |13.0.10.0（build-25056151） |
+| `open-vm-tools` 是否 active |是 |
+| 桌面分辨率是否能自动调整 | 是|
+| SSH 是否 enabled / active | enable：enabled；active：active|
+| 22 端口是否监听 |是 |
+| rsyslog 是否 enabled / active |enabled：enabled；active：active |
+| `/var/log/syslog` 是否出现带学号姓名的测试日志 | 是|
+| 三项组件是否全部验收合格 |合格，全部验收合格 |
 
 ![基础组件状态](imgs/lab1-services.png)
 
@@ -267,16 +267,16 @@ sudo tail -n 10 /var/log/syslog
 
 | 验收项目 | 合格标准 | 你的结论 |
 | :--- | :--- | :--- |
-| VMware 版本 | VMware Workstation Pro 26H1 for Windows | |
-| Linux 版本 | Ubuntu 24.04 LTS Desktop amd64，安装介质为教师提供的 24.04.4 | |
-| 虚拟机联网 | 具有 IP 和默认路由，IP 联通与 DNS 解析正常 | |
-| 国内软件源 | 已换成国内镜像站，`sudo apt update` 成功 | |
-| CPU、内存、存储 | 至少 2 核、4GB、40GB，且与宿主机档位匹配 | |
-| VMware Tools、SSH、rsyslog | 软件包已安装，服务和功能检查通过 | |
+| VMware 版本 | VMware Workstation Pro 26H1 for Windows |符合标准 |
+| Linux 版本 | Ubuntu 24.04 LTS Desktop amd64，安装介质为教师提供的 24.04.4 | 符合标准|
+| 虚拟机联网 | 具有 IP 和默认路由，IP 联通与 DNS 解析正常 | 符合标准，IP连通，DNS解析正常|
+| 国内软件源 | 已换成国内镜像站，`sudo apt update` 成功 |符合标准，切换清华镜像源，apt-update成功 |
+| CPU、内存、存储 | 至少 2 核、4GB、40GB，且与宿主机档位匹配 |符合标准，2核，4GB内存，40GB存储 |
+| VMware Tools、SSH、rsyslog | 软件包已安装，服务和功能检查通过 |软件包全部安装，服务功能检查通过；SSH端口监听正常 |
 
 简要说明你遇到的问题、解决方法，以及当前环境是否可以继续完成后续实验：
 
-> 填写：
+> 填写：初始SSH服务未设置开机自启，使用sudo systemctl enable ssh配置开机自启，sudo systemctl start ssh启动服务；已更换国内清华镜像源，sudo apt update执行成功。虚拟机网络、DNS解析正常，硬件配置达标，VMware‑Tools、rsyslog、ssh日志功能均正常。当前环境验收合格，可以继续完成后续实验
 
 ---
 
@@ -323,4 +323,4 @@ sudo tail -n 10 /var/log/syslog
 
 **2026 年 9 月 10 日 23:59:59**
 
-按仓库 `README.md` 第 4 节的规则：不晚于 9 月 10 日 23:59:59 创建 PR 并完成最后一次推送不算超时，9 月 11 日 00:00 起新建 PR 或向已有 PR 推送任何修改均算作超时。时间按北京时间计算，并以 GitHub 记录的最后一次推送时间为准。审核未通过的同学请务必在截止前完成修改。
+按仓库 `README.md` 第 4 节的规则：不晚于 9 月 10 日 23:59:59 创建 PR 不算超时，9 月 11 日 00:00 起创建 PR 算作超时。时间按北京时间计算，并以 GitHub 记录的 PR 首次创建时间为准。
