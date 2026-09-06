@@ -1,11 +1,4 @@
 # Lab1：日志实验环境验收
-
-> **作业目标**：用命令输出和截图证明 VMware、Ubuntu、网络、虚拟硬件以及课程必需组件已正确安装。
->
-> **前置条件**：已按 [`操作手册.md`](操作手册.md) 完成虚拟机安装、国内软件源配置和基础组件配置。
->
-> **命令执行方式**：下面所有命令请**一条一条执行**，每执行一条就先看清它的输出再执行下一条。不要把一节里的命令一次性全部粘贴进终端，否则输出会混在一起，看不出是哪条命令出了问题。
-
 ---
 
 ## 任务一：检查 VMware 版本
@@ -24,8 +17,8 @@ VMware Workstation Pro 26H1 for Windows
 
 | 项目 | 你的填写内容 |
 | :--- | :--- |
-| 已安装的 VMware 完整版本号 | |
-| 是否为教师指定版本 | |
+| 已安装的 VMware 完整版本号 |VMware Workstation Pro 26H1 for Windows|
+| 是否为教师指定版本 |是|
 
 ![VMware 版本](imgs/lab1-vmware-version.png)
 
@@ -61,10 +54,10 @@ sudo cat /var/log/installer/media-info
 
 | 项目 | 你的填写内容 |
 | :--- | :--- |
-| Ubuntu 当前完整版本 | |
-| 安装介质的版本 | |
-| 处理器架构 | |
-| 是否为教师提供的 Ubuntu 24.04.4 LTS Desktop amd64 | |
+| Ubuntu 当前完整版本 |Ubuntu 24.04.4 LTS  |
+| 安装介质的版本 |/var/log/installer/media‑info  文件不存在，无法读取安装介质日志；系统版本为 Ubuntu 24.04.4 LTS Desktop amd64 |
+| 处理器架构 |x86_64 |
+| 是否为教师提供的 Ubuntu 24.04.4 LTS Desktop amd64 |是 |
 
 ![Ubuntu 版本](imgs/lab1-ubuntu-version.png)
 
@@ -118,13 +111,13 @@ sudo apt update
 
 | 项目 | 你的填写内容 |
 | :--- | :--- |
-| 虚拟机 IP 地址 | |
-| 网络模式 | NAT / 其他： |
-| ping `223.5.5.5` 是否成功 | |
-| ping `mirrors.tuna.tsinghua.edu.cn` 是否成功 | |
-| 使用的软件源镜像站 | |
-| `sudo apt update` 是否成功 | |
-| 联网是否合格 | |
+| 虚拟机 IP 地址 |192.168.200.128 |
+| 网络模式 | NAT / 其他：NAT |
+| ping `223.5.5.5` 是否成功 |是 |
+| ping `mirrors.tuna.tsinghua.edu.cn` 是否成功 |是 |
+| 使用的软件源镜像站 |阿里云镜像源 |
+| `sudo apt update` 是否成功 |是 |
+| 联网是否合格 |是 |
 
 ![虚拟机联网](imgs/lab1-network.png)
 
@@ -168,13 +161,13 @@ df -h /
 
 | 项目 | 你的填写内容 |
 | :--- | :--- |
-| 宿主机内存 / CPU 核心 / 存放盘剩余空间 | |
+| 宿主机内存 / CPU 核心 / 存放盘剩余空间 |宿主机内存15.6GB，CPU逻辑核心16，D盘剩余16.8G |
 | 选择的配置档位 | 最低可用档 / 课程推荐档 / 宽裕档 |
-| 虚拟 CPU 核心数 | |
-| 虚拟内存 | |
-| 虚磁盘容量 | |
-| 根分区可用空间 | |
-| 资源分配是否符合对应档位 | |
+| 虚拟 CPU 核心数 |2 |
+| 虚拟内存 |6GB |
+| 虚磁盘容量 |40GB |
+| 根分区可用空间 |27G |
+| 资源分配是否符合对应档位 |符合 |
 
 ![虚机资源](imgs/lab1-resources.png)
 
@@ -250,14 +243,14 @@ sudo tail -n 10 /var/log/syslog
 
 | 项目 | 你的填写内容 |
 | :--- | :--- |
-| VMware Tools 版本 | |
-| `open-vm-tools` 是否 active | |
-| 桌面分辨率是否能自动调整 | |
-| SSH 是否 enabled / active | |
-| 22 端口是否监听 | |
-| rsyslog 是否 enabled / active | |
-| `/var/log/syslog` 是否出现带学号姓名的测试日志 | |
-| 三项组件是否全部验收合格 | |
+| VMware Tools 版本 |13.0.10.0 (build‑25056151)  |
+| `open-vm-tools` 是否 active |active |
+| 桌面分辨率是否能自动调整 |是（拖动窗口边框，Ubuntu分辨率自动跟随窗口变化）|
+| SSH 是否 enabled / active |enabled / active  |
+| 22 端口是否监听 |是，LISTEN状态  |
+| rsyslog 是否 enabled / active |enabled / active |
+| `/var/log/syslog` 是否出现带学号姓名的测试日志 |是，日志可见  lab1‑check: Lab1 rsyslog test 2024010032houna|
+| 三项组件是否全部验收合格 |全部合格 |
 
 ![基础组件状态](imgs/lab1-services.png)
 
@@ -267,60 +260,17 @@ sudo tail -n 10 /var/log/syslog
 
 | 验收项目 | 合格标准 | 你的结论 |
 | :--- | :--- | :--- |
-| VMware 版本 | VMware Workstation Pro 26H1 for Windows | |
-| Linux 版本 | Ubuntu 24.04 LTS Desktop amd64，安装介质为教师提供的 24.04.4 | |
-| 虚拟机联网 | 具有 IP 和默认路由，IP 联通与 DNS 解析正常 | |
-| 国内软件源 | 已换成国内镜像站，`sudo apt update` 成功 | |
-| CPU、内存、存储 | 至少 2 核、4GB、40GB，且与宿主机档位匹配 | |
-| VMware Tools、SSH、rsyslog | 软件包已安装，服务和功能检查通过 | |
+| VMware 版本 | VMware Workstation Pro 26H1 for Windows |VMware Workstation Pro 26H1 for Windows |
+| Linux 版本 | Ubuntu 24.04 LTS Desktop amd64，安装介质为教师提供的 24.04.4 |Ubuntu 24.04 LTS Desktop amd64，安装介质为教师提供的24.04.4 |
+| 虚拟机联网 | 具有 IP 和默认路由，IP 联通与 DNS 解析正常 |具有 IP 和默认路由，IP 联通与 DNS 解析正常 | 获取IP，外网访问、DNS解析正常 |
+| 国内软件源 | 已换成国内镜像站，`sudo apt update` 成功 |已换成国内镜像站，`sudo apt update` 成功 | 已更换国内镜像源，apt‑update执行成功 |
+| CPU、内存、存储 | 至少 2 核、4GB、40GB，且与宿主机档位匹配 |至少 2 核、4GB、40GB，且与宿主机档位匹配 | 配置2核CPU，4GB内存，40GB磁盘，配置达标 |
+| VMware Tools、SSH、rsyslog | 软件包已安装，服务和功能检查通过 |软件包已安装，服务和功能检查通过 | open‑vm‑tools、ssh、rsyslog全部安装，active、enabled，22端口监听，日志写入测试正常 |
 
 简要说明你遇到的问题、解决方法，以及当前环境是否可以继续完成后续实验：
 
 > 填写：
-
+问题1：openssh‑server安装完成但ssh.service缺失，重装openssh‑server修复；
+问题2：Ubuntu终端无法输入中文，日志测试使用学号+英文昵称代替中文姓名。
 ---
 
-## 截图要求
-
-- 截图须清晰，菜单和终端文字可读。
-- 终端截图应同时显示完整命令和其输出。
-- 一张截图可以包含同一任务下的多条命令及其输出，但每条命令和它的输出必须能对应上。
-- 截图中应能看到学生自己的虚拟机或学号姓名日志，不得直接使用他人截图。
-- 必须使用电脑自带的截图功能，严禁使用手机拍摄屏幕。
-- 所有截图放在 `imgs/` 目录中，文件名与下表一致。
-
-| 截图内容 | 文件名 |
-| :--- | :--- |
-| VMware Workstation About 页面，能看到完整版本 | `lab1-vmware-version.png` |
-| Ubuntu 当前版本、安装介质版本和 `x86_64` 架构 | `lab1-ubuntu-version.png` |
-| IP、默认路由、IP ping、域名 ping 和 `apt update` 成功 | `lab1-network.png` |
-| `nproc`、`free -h`、`lsblk`、`df -h /` 输出 | `lab1-resources.png` |
-| 三项组件版本/状态、22 端口和 rsyslog 测试日志 | `lab1-services.png` |
-
----
-
-## 提交要求
-
-在自己的“学号姓名”文件夹下新建 `Lab1/`，提交填写完整的 `Lab1.md` 和全部截图：
-
-```text
-学号姓名/
-└── Lab1/
-    ├── Lab1.md
-    └── imgs/
-        ├── lab1-vmware-version.png
-        ├── lab1-ubuntu-version.png
-        ├── lab1-network.png
-        ├── lab1-resources.png
-        └── lab1-services.png
-```
-
-> **注意**：`imgs` 全部小写。文件夹名和截图文件名区分大小写，必须与上面完全一致，否则图片引用会失效。
-
----
-
-## 截止时间
-
-**2026 年 9 月 10 日 23:59:59**
-
-按仓库 `README.md` 第 4 节的规则：不晚于 9 月 10 日 23:59:59 创建 PR 并完成最后一次推送不算超时，9 月 11 日 00:00 起新建 PR 或向已有 PR 推送任何修改均算作超时。时间按北京时间计算，并以 GitHub 记录的最后一次推送时间为准。审核未通过的同学请务必在截止前完成修改。
