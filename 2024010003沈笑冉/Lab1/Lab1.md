@@ -24,8 +24,8 @@ VMware Workstation Pro 26H1 for Windows
 
 | 项目 | 你的填写内容 |
 | :--- | :--- |
-| 已安装的 VMware 完整版本号 | 17.0.0 build-20800274|
-| 是否为教师指定版本 |否 |
+| 已安装的 VMware 完整版本号 | VMware Workstation Pro 26H1 for Windows|
+| 是否为教师指定版本 |是 |
 
 ![VMware 版本](imgs/lab1-vmware-version.png)
 
@@ -122,7 +122,7 @@ sudo apt update
 | 网络模式 | NAT  |
 | ping `223.5.5.5` 是否成功 | 是|
 | ping `mirrors.tuna.tsinghua.edu.cn` 是否成功 | 是|
-| 使用的软件源镜像站 | www.baidu.com|
+| 使用的软件源镜像站 | mirrors.tuna.tsinghua.edu.cn|
 | `sudo apt update` 是否成功 | 是|
 | 联网是否合格 | 是|
 
