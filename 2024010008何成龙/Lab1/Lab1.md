@@ -12,10 +12,10 @@
 
 | 项目 | 填写内容 |
 | :--- | :--- |
-| 学号 |2024010008 |
-| 姓名 |何成龙 |
-| 班级 |信息安全本科24 |
-| 完成日期 |2026.9.3 |
+| 学号 | |
+| 姓名 | |
+| 班级 | |
+| 完成日期 | |
 
 ---
 
@@ -35,8 +35,8 @@ VMware Workstation Pro 26H1 for Windows
 
 | 项目 | 你的填写内容 |
 | :--- | :--- |
-| 已安装的 VMware 完整版本号 |26.0.0.25388281 |
-| 是否为教师指定版本 | 是|
+| 已安装的 VMware 完整版本号 | |
+| 是否为教师指定版本 | |
 
 ![VMware 版本](imgs/lab1-vmware-version.png)
 
@@ -72,10 +72,10 @@ sudo cat /var/log/installer/media-info
 
 | 项目 | 你的填写内容 |
 | :--- | :--- |
-| Ubuntu 当前完整版本 |Ubuntu 24.04.4 LTS |
-| 安装介质的版本 |Ubuntu 24.04.4 LTS (Noble Numbat) |
-| 处理器架构 |x86_64|
-| 是否为教师提供的 Ubuntu 24.04.4 LTS Desktop amd64 |是 |
+| Ubuntu 当前完整版本 | |
+| 安装介质的版本 | |
+| 处理器架构 | |
+| 是否为教师提供的 Ubuntu 24.04.4 LTS Desktop amd64 | |
 
 ![Ubuntu 版本](imgs/lab1-ubuntu-version.png)
 
@@ -129,13 +129,13 @@ sudo apt update
 
 | 项目 | 你的填写内容 |
 | :--- | :--- |
-| 虚拟机 IP 地址 | 192.168.16.130|
-| 网络模式 | NAT |
-| ping `223.5.5.5` 是否成功 |成功 |
-| ping `mirrors.tuna.tsinghua.edu.cn` 是否成功 | 成功|
-| 使用的软件源镜像站 | mirrors.tuna.tsinghua.edu.cn|
-| `sudo apt update` 是否成功 |成功 |
-| 联网是否合格 |合格 |
+| 虚拟机 IP 地址 | |
+| 网络模式 | NAT / 其他： |
+| ping `223.5.5.5` 是否成功 | |
+| ping `mirrors.tuna.tsinghua.edu.cn` 是否成功 | |
+| 使用的软件源镜像站 | |
+| `sudo apt update` 是否成功 | |
+| 联网是否合格 | |
 
 ![虚拟机联网](imgs/lab1-network.png)
 
@@ -179,13 +179,13 @@ df -h /
 
 | 项目 | 你的填写内容 |
 | :--- | :--- |
-| 宿主机内存 / CPU 核心 / 存放盘剩余空间 |CPU 16 核，内存 15.7GB，C 盘剩余 125GB |
-| 选择的配置档位 | 课程推荐档 |
-| 虚拟 CPU 核心数 | 2|
-| 虚拟内存 |5.7G |
-| 虚磁盘容量 |	40G |
-| 根分区可用空间 |26G |
-| 资源分配是否符合对应档位 | 符合|
+| 宿主机内存 / CPU 核心 / 存放盘剩余空间 | |
+| 选择的配置档位 | 最低可用档 / 课程推荐档 / 宽裕档 |
+| 虚拟 CPU 核心数 | |
+| 虚拟内存 | |
+| 虚磁盘容量 | |
+| 根分区可用空间 | |
+| 资源分配是否符合对应档位 | |
 
 ![虚机资源](imgs/lab1-resources.png)
 
@@ -261,14 +261,14 @@ sudo tail -n 10 /var/log/syslog
 
 | 项目 | 你的填写内容 |
 | :--- | :--- |
-| VMware Tools 版本 | 13.0.10.0(build-25056151)|
-| `open-vm-tools` 是否 active |是 |
-| 桌面分辨率是否能自动调整 |是 |
-| SSH 是否 enabled / active | 是|
-| 22 端口是否监听 |	是 |
-| rsyslog 是否 enabled / active | 是|
-| `/var/log/syslog` 是否出现带学号姓名的测试日志 |	是 |
-| 三项组件是否全部验收合格 |全部验收合格 |
+| VMware Tools 版本 | |
+| `open-vm-tools` 是否 active | |
+| 桌面分辨率是否能自动调整 | |
+| SSH 是否 enabled / active | |
+| 22 端口是否监听 | |
+| rsyslog 是否 enabled / active | |
+| `/var/log/syslog` 是否出现带学号姓名的测试日志 | |
+| 三项组件是否全部验收合格 | |
 
 ![基础组件状态](imgs/lab1-services.png)
 
@@ -278,19 +278,17 @@ sudo tail -n 10 /var/log/syslog
 
 | 验收项目 | 合格标准 | 你的结论 |
 | :--- | :--- | :--- |
-| VMware 版本 | VMware Workstation Pro 26H1 for Windows | 已满足|
-| Linux 版本 | Ubuntu 24.04 LTS Desktop amd64，安装介质为教师提供的 24.04.4 |Ubuntu 24.04.4，符合要求 |
-| 虚拟机联网 | 具有 IP 和默认路由，IP 联通与 DNS 解析正常 |	Ubuntu 24.04.4，符合要求 |
-| 国内软件源 | 已换成国内镜像站，`sudo apt update` 成功 |已更换国内源，apt‑update 执行成功 |
-| CPU、内存、存储 | 至少 2 核、4GB、40GB，且与宿主机档位匹配 |配置 2 核 CPU、4GB 内存、40GB 磁盘，配置达标 |
-| VMware Tools、SSH、rsyslog | 软件包已安装，服务和功能检查通过 |open‑vm‑tools、openssh‑server、rsyslog 全部安装，服务自启、端口监听、日志测试均通过 |
+| VMware 版本 | VMware Workstation Pro 26H1 for Windows | |
+| Linux 版本 | Ubuntu 24.04 LTS Desktop amd64，安装介质为教师提供的 24.04.4 | |
+| 虚拟机联网 | 具有 IP 和默认路由，IP 联通与 DNS 解析正常 | |
+| 国内软件源 | 已换成国内镜像站，`sudo apt update` 成功 | |
+| CPU、内存、存储 | 至少 2 核、4GB、40GB，且与宿主机档位匹配 | |
+| VMware Tools、SSH、rsyslog | 软件包已安装，服务和功能检查通过 | |
 
 简要说明你遇到的问题、解决方法，以及当前环境是否可以继续完成后续实验：
 
 > 填写：
-遇到的问题：Ubuntu 24.04 采用 DEB822 新型 apt 源配置格式，系统同时存在新旧两种源配置文件，修改传统/etc/apt/sources.list不生效，执行sudo apt update出现 404 Not Found 报错，软件仓库无法正常更新。
-解决方法：了解 Ubuntu24.04 源机制，切换编辑 DEB822 格式源文件/etc/apt/sources.list.d/ubuntu.sources，配置清华镜像源；旧的sources.list文件会造成冲突，将其重命名备份，避免 apt 同时读取多套源产生冲突。
-是否可继续实验：OpenSSL 为系统自带工具，本次数字证书实验不依赖 apt 软件仓库，虽然 apt 存在 404 警告，但 OpenSSL 版本满足实验要求、网络连通、中文 locale 环境正常，当前环境可以正常完成后续 CA 证书相关全部实验
+
 ---
 
 ## 截图要求
