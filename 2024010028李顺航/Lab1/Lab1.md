@@ -141,7 +141,7 @@ open-vm-tools 是否 active	active（运行正常）
 桌面分辨率是否能自动调整	是，可自动适配虚拟机窗口大小
 SSH 是否 enabled / active	enabled、active，开机自启且正在运行
 22 端口是否监听	是，0.0.0.0:22 处于 LISTEN 监听状态
-rsyslog 是否 enabled / active	
+rsyslog 是否 enabled / active	enabled、active，开机自启且正在运行
 /var/log/syslog 是否出现带学号姓名的测试日志	是，日志内容：lab1‑check: Lab1 rsyslog test 2024010028 李顺航
 三项组件是否全部验收合格	全部验收合格
 基础组件状态
