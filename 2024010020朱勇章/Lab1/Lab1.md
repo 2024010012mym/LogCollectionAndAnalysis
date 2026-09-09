@@ -35,8 +35,8 @@ VMware Workstation Pro 26H1 for Windows
 
 | 项目 | 你的填写内容 |
 | :--- | :--- |
-| 已安装的 VMware 完整版本号 | |
-| 是否为教师指定版本 | |
+| 已安装的 VMware 完整版本号 |VMware Workstation Pro 26H1 Version 26.0.0.25388281 |
+| 是否为教师指定版本 |是 |
 
 ![VMware 版本](imgs/lab1-vmware-version.png)
 ![alt text](lab1-vmware-version.png)
@@ -71,10 +71,10 @@ sudo cat /var/log/installer/media-info
 
 | 项目 | 你的填写内容 |
 | :--- | :--- |
-| Ubuntu 当前完整版本 | |
-| 安装介质的版本 | |
-| 处理器架构 | |
-| 是否为教师提供的 Ubuntu 24.04.4 LTS Desktop amd64 | |
+| Ubuntu 当前完整版本 |Ubuntu 24.04.4 LTS |
+| 安装介质的版本 | Ubuntu 24.04.4 LTS|
+| 处理器架构 |	x86_64 |
+| 是否为教师提供的 Ubuntu 24.04.4 LTS Desktop amd64 |是 |
 
 ![Ubuntu 版本](imgs/lab1-ubuntu-version.png)
 ![alt text](lab1-ubuntu-version.png)
@@ -128,13 +128,13 @@ sudo apt update
 
 | 项目 | 你的填写内容 |
 | :--- | :--- |
-| 虚拟机 IP 地址 | |
+| 虚拟机 IP 地址 |192.168.55.129 |
 | 网络模式 | NAT / 其他： |
-| ping `223.5.5.5` 是否成功 | |
-| ping `mirrors.tuna.tsinghua.edu.cn` 是否成功 | |
-| 使用的软件源镜像站 | |
-| `sudo apt update` 是否成功 | |
-| 联网是否合格 | |
+| ping `223.5.5.5` 是否成功 |成功|
+| ping `mirrors.tuna.tsinghua.edu.cn` 是否成功 |成功|
+| 使用的软件源镜像站 | mirrors.tuna.tsinghua.edu.cn|
+| `sudo apt update` 是否成功 |成功 |
+| 联网是否合格 |合格|
 
 ![虚拟机联网](imgs/lab1-network.png)
 ![alt text](lab1-services.png)
@@ -178,13 +178,13 @@ df -h /
 
 | 项目 | 你的填写内容 |
 | :--- | :--- |
-| 宿主机内存 / CPU 核心 / 存放盘剩余空间 | |
+| 宿主机内存 / CPU 核心 / 存放盘剩余空间 | 宿主机内存 16092MB (16GB)，CPU 8 核，D 盘存放虚拟机，剩余空间充足|
 | 选择的配置档位 | 最低可用档 / 课程推荐档 / 宽裕档 |
-| 虚拟 CPU 核心数 | |
-| 虚拟内存 | |
-| 虚磁盘容量 | |
-| 根分区可用空间 | |
-| 资源分配是否符合对应档位 | |
+| 虚拟 CPU 核心数 | 2|
+| 虚拟内存 | 5.7Gi|
+| 虚磁盘容量 |40G |
+| 根分区可用空间 |25G|
+| 资源分配是否符合对应档位 |是|
 
 ![虚机资源](imgs/lab1-resources.png)
 ![alt text](lab1-resources.png)
@@ -260,14 +260,14 @@ sudo tail -n 10 /var/log/syslog
 
 | 项目 | 你的填写内容 |
 | :--- | :--- |
-| VMware Tools 版本 | |
-| `open-vm-tools` 是否 active | |
-| 桌面分辨率是否能自动调整 | |
-| SSH 是否 enabled / active | |
-| 22 端口是否监听 | |
-| rsyslog 是否 enabled / active | |
-| `/var/log/syslog` 是否出现带学号姓名的测试日志 | |
-| 三项组件是否全部验收合格 | |
+| VMware Tools 版本 |13.0.10.0 (build-25056151)|
+| `open-vm-tools` 是否 active |active |
+| 桌面分辨率是否能自动调整 | 是|
+| SSH 是否 enabled / active |enabled / inactive |
+| 22 端口是否监听 |否|
+| rsyslog 是否 enabled / active | enabled / active|
+| `/var/log/syslog` 是否出现带学号姓名的测试日志 |是 |
+| 三项组件是否全部验收合格 |否 |
 
 ![基础组件状态](imgs/lab1-services.png)
 ![alt text](lab1-network.png)
