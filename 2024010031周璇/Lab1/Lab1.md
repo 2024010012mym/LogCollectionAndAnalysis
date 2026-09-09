@@ -266,10 +266,10 @@ sudo tail -n 10 /var/log/syslog
 | VMware Tools 版本 | |vmware-toolbox-cmd -v
 | `open-vm-tools` 是否 active | |是
 | 桌面分辨率是否能自动调整 | |能
-| SSH 是否 enabled / active | |是
+| SSH 是否 enabled / active | |enabled / active
 | 22 端口是否监听 | |是
-| rsyslog 是否 enabled / active | |
-| `/var/log/syslog` 是否出现带学号姓名的测试日志 | |是
+| rsyslog 是否 enabled / active | |是
+| `/var/log/syslog` 是否出现带学号姓名的测试日志 | |enabled / active
 | 三项组件是否全部验收合格 | |是
 
 ![基础组件状态](imgs/lab1-services.png)
@@ -280,16 +280,17 @@ sudo tail -n 10 /var/log/syslog
 
 | 验收项目 | 合格标准 | 你的结论 |
 | :--- | :--- | :--- |
-| VMware 版本 | VMware Workstation Pro 26H1 for Windows | |
-| Linux 版本 | Ubuntu 24.04 LTS Desktop amd64，安装介质为教师提供的 24.04.4 | |
-| 虚拟机联网 | 具有 IP 和默认路由，IP 联通与 DNS 解析正常 | |
-| 国内软件源 | 已换成国内镜像站，`sudo apt update` 成功 | |
-| CPU、内存、存储 | 至少 2 核、4GB、40GB，且与宿主机档位匹配 | |
-| VMware Tools、SSH、rsyslog | 软件包已安装，服务和功能检查通过 | |
+| VMware 版本 | VMware Workstation Pro 26H1 for Windows | |合格
+| Linux 版本 | Ubuntu 24.04 LTS Desktop amd64，安装介质为教师提供的 24.04.4 | |合格
+| 虚拟机联网 | 具有 IP 和默认路由，IP 联通与 DNS 解析正常 | |合格
+| 国内软件源 | 已换成国内镜像站，`sudo apt update` 成功 | |合格
+| CPU、内存、存储 | 至少 2 核、4GB、40GB，且与宿主机档位匹配 | |合格
+| VMware Tools、SSH、rsyslog | 软件包已安装，服务和功能检查通过 | |合格
 
 简要说明你遇到的问题、解决方法，以及当前环境是否可以继续完成后续实验：
 
-> 填写：
+> 填写：初始终端未进入 Git 仓库根目录，执行 git 命令时报错`not a git repository`；手动输入 cd 命令时盘符与路径格式错误，无法定位到目标文件夹。
+解决方法：直接在本地仓库根目录的空白处右键选择「Git Bash Here」，终端自动进入正确的仓库工作目录，彻底解决路径匹配问题
 
 ---
 
