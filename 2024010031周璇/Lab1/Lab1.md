@@ -263,13 +263,13 @@ sudo tail -n 10 /var/log/syslog
 
 | 项目 | 你的填写内容 |
 | :--- | :--- |
-| VMware Tools 版本 | |vmware-toolbox-cmd -v
+| VMware Tools 版本 | |13.0.10.0 (build-25056151)
 | `open-vm-tools` 是否 active | |是
 | 桌面分辨率是否能自动调整 | |能
-| SSH 是否 enabled / active | |enabled / active
+| SSH 是否 enabled / active | |是
 | 22 端口是否监听 | |是
 | rsyslog 是否 enabled / active | |是
-| `/var/log/syslog` 是否出现带学号姓名的测试日志 | |enabled / active
+| `/var/log/syslog` 是否出现带学号姓名的测试日志 | |是
 | 三项组件是否全部验收合格 | |是
 
 ![基础组件状态](imgs/lab1-services.png)
