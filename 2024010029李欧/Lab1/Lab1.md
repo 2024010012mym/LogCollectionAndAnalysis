@@ -135,7 +135,7 @@ sudo apt update
 | ping `mirrors.tuna.tsinghua.edu.cn` 是否成功 |成功，0%丢包 |
 | 使用的软件源镜像站 |mirrors.tuna.tsinghua.edu.cn|
 | `sudo apt update` 是否成功 |成功，0%丢包 |
-| 联网是否合格 | |
+| 联网是否合格 |是 |
 
 ![虚拟机联网](imgs/lab1-network.png)
 
