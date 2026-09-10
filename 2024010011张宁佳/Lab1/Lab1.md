@@ -24,7 +24,7 @@ VMware Workstation Pro 26H1 for Windows
 
 | 项目 | 你的填写内容 |
 | :--- | :--- |
-| 已安装的 VMware 完整版本号 | VMware Workstation Pro 26H1|
+| 已安装的 VMware 完整版本号 | 26.0.0.25388281|
 | 是否为教师指定版本 | 是|
 
 ![VMware 版本](imgs/lab1-vmware-version.png)
@@ -61,8 +61,8 @@ sudo cat /var/log/installer/media-info
 
 | 项目 | 你的填写内容 |
 | :--- | :--- |
-| Ubuntu 当前完整版本 | |
-| 安装介质的版本 | |
+| Ubuntu 当前完整版本 | Ubuntu 24.04.4 LTS|
+| 安装介质的版本 |  Ubuntu 24.04.4 LTS|
 | 处理器架构 |x86_64 |
 | 是否为教师提供的 Ubuntu 24.04.4 LTS Desktop amd64 | 是|
 
