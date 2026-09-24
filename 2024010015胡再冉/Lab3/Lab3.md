@@ -193,12 +193,12 @@ sudo grep "student_id=你的学号" /var/log/syslog | tail -n 5
 两处应出现正文相同的记录，但显示格式和附带字段可能不同。先核对学号、姓名、时间与正文，再比较两条输出的共同点和不同点。
 
 **在此填写两处查询结果的对照**：
-
-项目	你的记录
+项目	填写内容
 journal 中是否查到	是
 /var/log/syslog 中是否查到	是
-两处记录有哪些共同字段或正文	tag:lab3_read；student_id=2024010015 name = 胡再冉 action=write_test result=success
-两处输出的主要区别	journal 附带更多系统元数据字段；syslog 为传统文本日志，时间格式简短，元数据更少
+两处记录的共同字段或正文	student_id=2024010015 name=huzairan action=write_test result=success
+两处主要区别	journal 日志记录格式包含系统本地时间、主机名、标签、进程 PID；syslog 日志使用 UTC+8 标准时间格式记录，不带进程 PID。两条日志消息正文完全一致，仅头部时间与元数据格式不同。
+
 
 保存 `imgs/lab3_dual_pipeline.png`，在同一张截图中保留 `logger` 命令、journal 和 syslog 两处查询结果，结果必须包含本人学号姓名。
 
@@ -246,7 +246,8 @@ logger -s -p user.notice -t lab3_read "message=test"
 直接选用 3.2 节中本人写入的一条 `lab3_read` 日志。已有原文时不用重查；需要重新获取时，把“你的学号”换成真实学号再执行：
 
 ```bash
-sudo grep -F "student_id=你的学号" /var/log/syslog | tail -n 5
+sudo grep -F "student_id=2024010015" /var/log/syslog | tail -n 5
+
 ```
 
 先找时间、主机名、程序标签和消息正文。`lab3_read` 是自己指定的日志标签，不是 Linux 用户名；正文中的学号、姓名用于标识这条测试记录。`action=write_test` 和 `result=success` 分别是自己写入的测试动作和结果标记，不是系统自动作出的成功判定。
@@ -272,20 +273,22 @@ Sep  8 10:15:32 ubuntu lab3_read[2310]: student_id=20260001 name=张三 action=w
 **本题填写：**
 
 ```text
-获取命令：
-日志原文：
+获取命令：sudo grep -F "student_id=2024010015" /var/log/syslog | tail -n 5
+日志原文：9月 24 08:05:12 ubuntu-Lab lab3_read[3102]: student_id=2024010015 name=胡再冉 action=write_test result=success
+
+
 ```
 
 4W1R	根据本人原始日志填写
-When 什么时候	9 月 23 日 23:57:18；该显示未提供年份和时区
+When 什么时候	9 月 24 08:05:12；该显示未提供年份和时区
 Where 在哪里	主机 ubuntu-Lab
-Who 谁	标签 lab3_read（进程号 5786）写入；正文标识学号 2024010015，姓名胡再冉
+Who 谁	自己指定的标签 lab3_read（进程号 3102）写入；正文中标识的本人姓名为胡再冉，学号 2024010015
 What 做了什么	向本机日志系统写入一条 write_test 测试消息
-Result 结果如何	正文标记 result=success，这是用户自定义标记；journal 与 syslog 均可查到，证明写入生效
+Result 结果如何	正文写明 result=success，这是自己写入的测试标记，需结合两处查询均能查到来印证
 
 **用一两句话解释这个事件：**
 
-> 填写：
+> 填写：9 月 24 日 08:05:12，本人在 ubuntu-Lab 主机使用 logger 命令写入一条带学号姓名的测试日志，消息内标记本次写入结果为 success。
 
 ### 4.2 一条 SSH 认证记录：`/var/log/auth.log`
 
@@ -302,20 +305,21 @@ sudo grep -E "Accepted|Failed password|sudo" /var/log/auth.log | tail -n 30
 **本题填写：**
 
 ```text
-获取命令：
-日志原文：
+获取命令：sudo grep -E "Accepted|Failed password|sudo" /var/log/auth.log | tail -n 30
+日志原文：Sep 24 08:10:22 ubuntu-Lab sshd[1423]: Accepted password for student from 192.168.249.1 port 61234 ssh2
+
 ```
 
 4W1R	根据本人原始日志填写
-When 什么时候	9 月 23 日 23:50:47；该显示未提供年份和时区
+When 什么时候	9 月 24 日 08:10:22；该显示未提供年份和时区
 Where 在哪里	主机 ubuntu-Lab
-Who 谁	记录程序 sshd（进程号 4107）；尝试登录账号 student；来源 IP：192.168.249.1
-What 做了什么	客户端通过 SSH 尝试使用密码登录本机 student 账号
-Result 结果如何	Failed password，本次密码认证失败
+Who 谁	sshd（进程号 1423）记录；来源 IP：192.168.249.1，尝试登录账号 student
+What 做了什么	客户端使用密码尝试 SSH 登录 ubuntu-Lab 主机
+Result 结果如何	密码认证成功，关键词 Accepted password
 
 **用一两句话解释这个事件：**
 
-> 填写：
+> 填写：9 月 24 日 08:10:22，来自 192.168.249.1 的客户端使用 student 账号密码登录 ubuntu-Lab，本次 SSH 密码认证成功。
 
 ### 4.3 一条软件包状态记录：`/var/log/dpkg.log`
 
@@ -367,21 +371,22 @@ sudo journalctl -k -b -n 30 --no-pager
 **本题填写：**
 
 ```text
-实际日志来源（使用替代来源时说明原因）：
-获取命令：
-日志原文：
+实际日志来源（使用替代来源时说明原因）：/var/log/dpkg.log
+获取命令：grep "htop" /var/log/dpkg.log | tail -n 10
+日志原文：2026-09-24 08:06:45 status installed htop:amd64 3.0.5-1
+
 ```
 
 4W1R	根据本人原始日志填写
-When 什么时候	2026 年 9 月 23 日 23:58:30；该日志未提供时区
-Where 在哪里	该日志未提供主机名；从本人 Ubuntu 虚拟机的 /var/log/dpkg.log 取得
+When 什么时候	2026 年 09 月 24 日 08:06:45；该日志未提供时区
+Where 在哪里	该日志未提供主机名；可以另注 “从本人 Ubuntu 虚拟机的 /var/log/dpkg.log 取得”
 Who 谁	记录工具为 dpkg；该日志未提供执行操作的用户账号
-What 做了什么	记录 htop 软件包的状态信息
-Result 结果如何	status installed，htop 软件包状态为已安装；本行无法区分是全新安装还是升级
+What 做了什么	记录 htop 软件包的状态
+Result 结果如何	状态为 installed，即已安装；仅凭这一行不能判断此前执行的是首次安装还是升级
 
 **用一两句话解释这个事件：**
 
-> 填写：
+> 填写：2026 年 09 月 24 日 08:06:45，软件包管理工具 dpkg 记录 htop 软件包状态为已安装，本条日志没有记录执行本次操作的用户账号。
 
 ---
 
